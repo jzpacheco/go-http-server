@@ -43,7 +43,7 @@ func (q *Queries) CreateChirp(ctx context.Context, arg CreateChirpParams) (Chirp
 }
 
 const getChirps = `-- name: GetChirps :many
-SELECT id, user_id, body, created_at, updated_at FROM chirps ORDER BY created_at
+SELECT id, user_id, body, created_at, updated_at FROM chirps ORDER BY created_at ASC
 `
 
 func (q *Queries) GetChirps(ctx context.Context) ([]Chirp, error) {
